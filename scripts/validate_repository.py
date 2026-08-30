@@ -61,12 +61,13 @@ def _local_link_target(raw_target: str) -> str | None:
 def _markdown_errors(root: Path) -> list[str]:
     errors: list[str] = []
     for markdown_path in sorted(root.rglob("*.md")):
-        if ".git" in markdown_path.parts or ".worktrees" in markdown_path.parts:
+        relative_path = markdown_path.relative_to(root)
+        if ".git" in relative_path.parts or ".worktrees" in relative_path.parts:
             continue
         if not markdown_path.is_file() or markdown_path.is_symlink():
             continue
 
-        relative_source = markdown_path.relative_to(root).as_posix()
+        relative_source = relative_path.as_posix()
         try:
             text = markdown_path.read_text(encoding="utf-8")
         except (OSError, UnicodeError):
@@ -83,11 +84,12 @@ def _markdown_errors(root: Path) -> list[str]:
                     f"{relative_source} links to missing path: {local_target}"
                 )
 
-        for reference in REFERENCE_LITERAL_RE.findall(text):
-            if not (root / reference).exists():
-                errors.append(
-                    f"{relative_source} references missing path: {reference}"
-                )
+        if relative_source == "SKILL.md":
+            for reference in REFERENCE_LITERAL_RE.findall(text):
+                if not (root / reference).exists():
+                    errors.append(
+                        f"{relative_source} references missing path: {reference}"
+                    )
 
     return errors
 

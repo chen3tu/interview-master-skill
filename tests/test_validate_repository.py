@@ -9,8 +9,8 @@ from scripts.validate_repository import validate_repository
 class ValidateRepositoryTests(unittest.TestCase):
     def setUp(self) -> None:
         self.temp_dir = tempfile.TemporaryDirectory()
-        self.root = Path(self.temp_dir.name)
-        (self.root / "references").mkdir()
+        self.root = Path(self.temp_dir.name) / ".worktrees" / "repository"
+        (self.root / "references").mkdir(parents=True)
         (self.root / "README.md").write_text(
             "# Demo\n\n[Contributing](CONTRIBUTING.md)\n", encoding="utf-8"
         )
@@ -96,6 +96,14 @@ class ValidateRepositoryTests(unittest.TestCase):
             "Required directory is not a directory: references",
             errors,
         )
+
+    def test_documentation_reference_example_is_not_a_runtime_dependency(self) -> None:
+        (self.root / "CONTRIBUTING.md").write_text(
+            "# Contributing\n\nExample: `references/future-role.md`\n",
+            encoding="utf-8",
+        )
+
+        self.assertEqual(validate_repository(self.root), [])
 
 
 if __name__ == "__main__":
