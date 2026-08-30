@@ -49,6 +49,17 @@ class BuildReleaseTests(unittest.TestCase):
 
         self.assertEqual(first_hash, second_hash)
 
+    def test_symlinked_payload_file_is_rejected(self) -> None:
+        external_path = Path(self.temp_dir.name) / "private.txt"
+        external_path.write_text("must not be packaged\n", encoding="utf-8")
+        (self.root / "references" / "external.md").symlink_to(external_path)
+
+        with self.assertRaisesRegex(
+            ValueError,
+            "Symlinks are not allowed in release payload",
+        ):
+            build_release(self.root, "3.0.0", self.root / "dist")
+
 
 if __name__ == "__main__":
     unittest.main()

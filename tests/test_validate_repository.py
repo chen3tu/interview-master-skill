@@ -1,3 +1,4 @@
+import shutil
 import tempfile
 import unittest
 from pathlib import Path
@@ -74,6 +75,25 @@ class ValidateRepositoryTests(unittest.TestCase):
 
         self.assertIn(
             "SKILL.md references missing path: references/missing.md",
+            errors,
+        )
+
+    def test_required_file_replaced_by_directory_is_reported(self) -> None:
+        (self.root / "README.md").unlink()
+        (self.root / "README.md").mkdir()
+
+        errors = validate_repository(self.root)
+
+        self.assertIn("Required file is not a file: README.md", errors)
+
+    def test_references_replaced_by_file_is_reported(self) -> None:
+        shutil.rmtree(self.root / "references")
+        (self.root / "references").write_text("not a directory\n", encoding="utf-8")
+
+        errors = validate_repository(self.root)
+
+        self.assertIn(
+            "Required directory is not a directory: references",
             errors,
         )
 

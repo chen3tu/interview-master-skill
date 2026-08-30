@@ -71,7 +71,7 @@ refactor: 重构行为面试题库分类方式
 
 ## 本地验证
 
-提交前请运行与 GitHub Actions 相同的自动检查：
+自动检查需要 Python 3.10 或更高版本。提交前请运行与 GitHub Actions 相同的命令：
 
 ```bash
 python3 -m unittest discover -s tests -v
