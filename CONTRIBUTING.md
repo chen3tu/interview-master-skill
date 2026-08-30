@@ -69,14 +69,26 @@ docs: 补充 README 使用说明
 refactor: 重构行为面试题库分类方式
 ```
 
-## 本地测试
+## 本地验证
 
-1. 将整个项目文件夹上传到 Claude Project
-2. 测试不同阶段的对话流程
-3. 确认 reference 文件能被正确引用
+自动检查需要 Python 3.10 或更高版本。提交前请运行与 GitHub Actions 相同的命令：
+
+```bash
+python3 -m unittest discover -s tests -v
+python3 scripts/validate_repository.py
+```
+
+验证器会检查必需文件、`SKILL.md` frontmatter、Markdown 相对链接和 reference 引用。
+
+如果改动影响 Skill 行为，还需要：
+
+1. 将 Skill 文件夹打包为 ZIP 并上传到 Claude
+2. 用与改动相关的最小场景完成一次对话测试
+3. 确认对应 reference 能按预期读取，且输出不泄露测试者隐私
 
 ## 行为准则
 
 - 保持专业和尊重
 - 基于真实经验分享，不造假数据
 - 保护隐私：不分享涉及真实公司/个人的敏感信息
+- 安全问题请通过[私密漏洞报告](https://github.com/chen3tu/interview-master-skill/security/advisories/new)提交

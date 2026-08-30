@@ -2,6 +2,12 @@
 
 **全流程面试准备与求职决策系统** — 一个面向 Claude AI 的 Skill，帮助求职者从岗位分析到拿下 Offer 的每一步。
 
+[![Release](https://img.shields.io/github/v/release/chen3tu/interview-master-skill?display_name=tag)](https://github.com/chen3tu/interview-master-skill/releases/latest)
+[![Validate](https://github.com/chen3tu/interview-master-skill/actions/workflows/validate.yml/badge.svg)](https://github.com/chen3tu/interview-master-skill/actions/workflows/validate.yml)
+[![License](https://img.shields.io/github/license/chen3tu/interview-master-skill)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/chen3tu/interview-master-skill?style=flat)](https://github.com/chen3tu/interview-master-skill/stargazers)
+[![Forks](https://img.shields.io/github/forks/chen3tu/interview-master-skill?style=flat)](https://github.com/chen3tu/interview-master-skill/forks)
+
 ## 这是什么？
 
 Interview Master 是一个基于 [Claude](https://claude.ai) 的 AI Skill（技能插件），它让 Claude 变成你的**私人面试顾问**——不是给你一堆通用模板，而是基于你的真实背景、目标岗位和具体情况，提供个性化的面试准备指导。
@@ -33,9 +39,14 @@ Interview Master 是一个基于 [Claude](https://claude.ai) 的 AI Skill（技�
 
 ## 快速开始
 
-### 方式一：安装 .skill 文件
+### 方式一：上传 Skill ZIP（推荐）
 
-下载 `interview-master.skill` 文件，在 Claude.ai 设置中安装即可。
+1. 从 [最新 Release](https://github.com/chen3tu/interview-master-skill/releases/latest) 下载 `interview-master-v3.0.0.zip`
+2. 确认 Claude 已启用“代码执行和文件创建”能力
+3. 进入 `自定义 > Skills`，点击 `+ > 创建技能 > 上传技能`
+4. 选择下载的 ZIP，安装后启用 Interview Master
+
+Claude 当前要求上传包含完整 Skill 文件夹的 ZIP；具体入口以 [Anthropic 官方说明](https://support.claude.com/en/articles/12512180-use-skills-in-claude)为准。
 
 ### 方式二：在 Claude.ai 中使用
 
@@ -114,6 +125,16 @@ interview-master/
 - 补充特定行业的面试经验
 - 分享真实的面试问题和复盘
 - 改进话术和框架
+
+## 项目入口
+
+- [提交问题或功能建议](https://github.com/chen3tu/interview-master-skill/issues/new/choose)
+- [交流使用经验](https://github.com/chen3tu/interview-master-skill/discussions)
+- [查看版本记录](CHANGELOG.md)
+- [阅读贡献指南](CONTRIBUTING.md)
+- [私密报告安全问题](SECURITY.md)
+
+> **隐私提示：** 简历、薪酬和面试记录可能包含敏感信息。公开提交 Issue、Discussion 或 PR 前，请删除个人信息、公司机密和未公开面试内容。
 
 ## 版本
 
