@@ -1,0 +1,65 @@
+name: 问题反馈
+description: 报告不准确、失效或无法正常使用的流程
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请删除姓名、电话、邮箱、真实公司机密和未公开面试记录等敏感信息。
+
+  - type: dropdown
+    id: stage
+    attributes:
+      label: 受影响的阶段
+      options:
+        - 岗位分析与公司调研
+        - 简历优化
+        - 问题准备与答案稿
+        - 能力关实操
+        - 模拟面试
+        - 面试复盘
+        - 薪资谈判与 Offer 决策
+        - 安装或加载 Skill
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: 实际表现
+      description: 说明发生了什么，以及结果为什么不符合预期。
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期表现
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 可复现示例
+      description: 提供已脱敏的提示词、步骤或最小示例。
+      placeholder: 请用虚构信息替换真实个人和公司信息。
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: 使用环境
+      description: 例如 Claude Web、Claude Desktop、Claude Code 或 API。
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隐私确认
+      options:
+        - label: 我已删除个人信息、公司机密和未公开面试内容。
+          required: true

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 使用交流与经验分享
+    url: https://github.com/chen3tu/interview-master-skill/discussions
+    about: 在 Discussions 中交流使用方法、面试经验和开放问题。
+  - name: 安全问题
+    url: https://github.com/chen3tu/interview-master-skill/security/advisories/new
+    about: 请通过私密安全报告提交漏洞，不要创建公开 Issue。

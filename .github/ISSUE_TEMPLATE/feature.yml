@@ -1,0 +1,43 @@
+name: 功能建议
+description: 建议新的岗位方向、工作流或改进方法
+title: "[Feature]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 要解决的问题
+      description: 描述当前用户在哪个场景中遇到了什么困难。
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议的工作流
+      description: 说明 Skill 应该如何提问、判断和输出。
+    validations:
+      required: true
+
+  - type: input
+    id: scope
+    attributes:
+      label: 适用岗位或阶段
+      placeholder: 例如：销售岗 / 模拟面试阶段
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 已尝试的替代方法
+      description: 如果没有，可填写“无”。
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: evidence
+    attributes:
+      label: 内容确认
+      options:
+        - label: 建议基于真实需求，且示例中不含个人信息或公司机密。
+          required: true
