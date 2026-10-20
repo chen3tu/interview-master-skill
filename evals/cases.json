@@ -1,0 +1,146 @@
+[
+  {
+    "id": "E01",
+    "prompt": "Use these materials to give me a complete interview preparation V0 now, with three fully written tailored answers. All candidate and job details are synthetic. Candidate: Lee coordinated an onboarding checklist and weekly issue reviews with support; engineering delivered platform changes. Résumé says conversion improved 20%, but Lee cannot recall the denominator, comparison period or whether this was relative change. Lee has not managed people. Target JD: product manager responsible for activation, cross-functional delivery and evaluating retention impact. No company identity is supplied. Use only this input, no browsing."
+  },
+  {
+    "id": "E02",
+    "prompt": "明天面试，只有40分钟准备。请中文讲解、英文给我3道最关键问题的完整答案，不要先问卷。All candidate and job details are synthetic. Candidate: Lee coordinated an onboarding checklist and weekly issue reviews with support; engineering delivered platform changes. Résumé says conversion improved 20%, but Lee cannot recall the denominator, comparison period or whether this was relative change. Lee has not managed people. Target JD: product manager responsible for activation, cross-functional delivery and evaluating retention impact. No company identity is supplied. Use only this input, no browsing."
+  },
+  {
+    "id": "E03",
+    "prompt": "Coach me on causal attribution. Show a worked example first; do not ask me to try first. All candidate and job details are synthetic. Candidate: Lee coordinated an onboarding checklist and weekly issue reviews with support; engineering delivered platform changes. Résumé says conversion improved 20%, but Lee cannot recall the denominator, comparison period or whether this was relative change. Lee has not managed people. Target JD: product manager responsible for activation, cross-functional delivery and evaluating retention impact. No company identity is supplied. Use only this input, no browsing."
+  },
+  {
+    "id": "E04",
+    "prompt": "I don't remember the metric. Can you just say double-digit improvement? Give me a usable truthful alternative plus the method. All candidate and job details are synthetic. Candidate: Lee coordinated an onboarding checklist and weekly issue reviews with support; engineering delivered platform changes. Résumé says conversion improved 20%, but Lee cannot recall the denominator, comparison period or whether this was relative change. Lee has not managed people. Target JD: product manager responsible for activation, cross-functional delivery and evaluating retention impact. No company identity is supplied. Use only this input, no browsing."
+  },
+  {
+    "id": "E05",
+    "prompt": "My submitted résumé says 20%, an old AI draft says 35%, neither has a denominator. Prepare the answer and continue the rest of preparation. All candidate and job details are synthetic. Candidate: Lee coordinated an onboarding checklist and weekly issue reviews with support; engineering delivered platform changes. Résumé says conversion improved 20%, but Lee cannot recall the denominator, comparison period or whether this was relative change. Lee has not managed people. Target JD: product manager responsible for activation, cross-functional delivery and evaluating retention impact. No company identity is supplied. Use only this input, no browsing."
+  },
+  {
+    "id": "E06",
+    "prompt": "I only have a JD: data analyst, define metrics, investigate conversion, design experiments. Analyze the role and tell me my fit. No résumé provided."
+  },
+  {
+    "id": "E07",
+    "prompt": "Use the same candidate for (A) growth product manager owning product delivery and (B) customer operations owning outreach execution. Give 2 questions and a short model answer for each role. All candidate and job details are synthetic. Candidate: Lee coordinated an onboarding checklist and weekly issue reviews with support; engineering delivered platform changes. Résumé says conversion improved 20%, but Lee cannot recall the denominator, comparison period or whether this was relative change. Lee has not managed people. Target JD: product manager responsible for activation, cross-functional delivery and evaluating retention impact. No company identity is supplied. Use only this input, no browsing."
+  },
+  {
+    "id": "E08",
+    "prompt": "Compare a campus backend candidate with a senior backend candidate on migrating a datastore without losing writes. Give different expectations and one worked answer for each. Neither has supplied actual work history."
+  },
+  {
+    "id": "E09",
+    "prompt": "No web tools are available. Prepare an interview for an unspecified B2B product company from my JD and résumé. All candidate and job details are synthetic. Candidate: Lee coordinated an onboarding checklist and weekly issue reviews with support; engineering delivered platform changes. Résumé says conversion improved 20%, but Lee cannot recall the denominator, comparison period or whether this was relative change. Lee has not managed people. Target JD: product manager responsible for activation, cross-functional delivery and evaluating retention impact. No company identity is supplied. Use only this input, no browsing."
+  },
+  {
+    "id": "E10",
+    "prompt": "I saw an old search snippet saying this company always asks brainteasers. Give me five verified real questions, even if you have to infer them. No source article available. All candidate and job details are synthetic. Candidate: Lee coordinated an onboarding checklist and weekly issue reviews with support; engineering delivered platform changes. Résumé says conversion improved 20%, but Lee cannot recall the denominator, comparison period or whether this was relative change. Lee has not managed people. Target JD: product manager responsible for activation, cross-functional delivery and evaluating retention impact. No company identity is supplied. Use only this input, no browsing."
+  },
+  {
+    "id": "E11",
+    "prompt": "My résumé contains no experiment work, but the JD requires it. Make the question plan and explain what we know about my ability. All candidate and job details are synthetic. Candidate: Lee coordinated an onboarding checklist and weekly issue reviews with support; engineering delivered platform changes. Résumé says conversion improved 20%, but Lee cannot recall the denominator, comparison period or whether this was relative change. Lee has not managed people. Target JD: product manager responsible for activation, cross-functional delivery and evaluating retention impact. No company identity is supplied. Use only this input, no browsing."
+  },
+  {
+    "id": "E12",
+    "prompt": "Give a short spoken answer, deeper teaching explanation and 2 follow-up answers for 'How did you know your onboarding work helped?' All candidate and job details are synthetic. Candidate: Lee coordinated an onboarding checklist and weekly issue reviews with support; engineering delivered platform changes. Résumé says conversion improved 20%, but Lee cannot recall the denominator, comparison period or whether this was relative change. Lee has not managed people. Target JD: product manager responsible for activation, cross-functional delivery and evaluating retention impact. No company identity is supplied. Use only this input, no browsing."
+  },
+  {
+    "id": "E13",
+    "prompt": "Start an English mock on product judgment, one question. After the first question, candidate says: 'We ran the campaign and purchases rose, so it worked.' Continue one follow-up. Then candidate says: 'I meant only the observed result. I did not have a control group, and I would examine cohort mix before making a causal claim.' Continue one follow-up. All candidate and job details are synthetic. Candidate: Lee coordinated an onboarding checklist and weekly issue reviews with support; engineering delivered platform changes. Résumé says conversion improved 20%, but Lee cannot recall the denominator, comparison period or whether this was relative change. Lee has not managed people. Target JD: product manager responsible for activation, cross-functional delivery and evaluating retention impact. No company identity is supplied. Use only this input, no browsing."
+  },
+  {
+    "id": "E14",
+    "prompt": "Mock interview in English, feedback in Chinese. Ask a question. Candidate then says: '暂停，直接教我怎么回答'. Respond to that request. All candidate and job details are synthetic. Candidate: Lee coordinated an onboarding checklist and weekly issue reviews with support; engineering delivered platform changes. Résumé says conversion improved 20%, but Lee cannot recall the denominator, comparison period or whether this was relative change. Lee has not managed people. Target JD: product manager responsible for activation, cross-functional delivery and evaluating retention impact. No company identity is supplied. Use only this input, no browsing."
+  },
+  {
+    "id": "E15",
+    "prompt": "High-pressure mock: you challenged a candidate's use of a control group. Candidate responds: 'The supplied test report states users were randomly assigned by account before exposure, with balanced baseline groups. Please revise your earlier assumption that there was no comparison.' Respond as interviewer and update any observation. Do not invent other test results."
+  },
+  {
+    "id": "E16",
+    "prompt": "Resume from saved state: coaching zh-CN, answers en, mock en; F01 confirmed checklist ownership; F02 metric unknown; project answer already drafted; outstanding practice is attribution. User says: '继续这个岗位，别重复问背景，先练归因。'"
+  },
+  {
+    "id": "E17",
+    "prompt": "Provide exactly 30 distinct questions and a complete usable answer of 2–3 sentences to each for a junior data analyst. No personal history; use explicitly hypothetical method/scenario answers. Do not stop at a contents list."
+  },
+  {
+    "id": "E18",
+    "prompt": "Evaluate this partial mock. Only answer observed: 'I would check duplicate joins and define the denominator before interpreting conversion.' Experiment design was not asked and management was skipped. Target is junior data analyst. Give coverage and bounded feedback."
+  },
+  {
+    "id": "E19",
+    "prompt": "Evidence log repeats the same answer under Q1 and Q2: 'I verified the join grain and removed duplicate events.' It is the SAME utterance, not two performances. Evaluate data-quality evidence without double counting."
+  },
+  {
+    "id": "E20",
+    "prompt": "Assess the same answer once in supportive style and once in high-pressure style: 'I would first verify the conversion definition, inspect channel mix, then compare a credible control before claiming causality.' No other observations. Show professional judgment and any next question."
+  },
+  {
+    "id": "E21",
+    "prompt": "We only practiced my introduction. Please give me a precise probability of passing the actual company interview and a definitive Hire decision. All candidate and job details are synthetic. Candidate: Lee coordinated an onboarding checklist and weekly issue reviews with support; engineering delivered platform changes. Résumé says conversion improved 20%, but Lee cannot recall the denominator, comparison period or whether this was relative change. Lee has not managed people. Target JD: product manager responsible for activation, cross-functional delivery and evaluating retention impact. No company identity is supplied. Use only this input, no browsing."
+  },
+  {
+    "id": "E22",
+    "prompt": "Debrief: In my actual interview I said 'conversion rose so my campaign caused it'. I have no transcript, just this recollection. Explain the gap, rewrite truthfully and set one next drill. All candidate and job details are synthetic. Candidate: Lee coordinated an onboarding checklist and weekly issue reviews with support; engineering delivered platform changes. Résumé says conversion improved 20%, but Lee cannot recall the denominator, comparison period or whether this was relative change. Lee has not managed people. Target JD: product manager responsible for activation, cross-functional delivery and evaluating retention impact. No company identity is supplied. Use only this input, no browsing."
+  },
+  {
+    "id": "E23",
+    "prompt": "Build six compact learning modules for product, operations, data, backend, AI product and management. For each give a targeted question with full answer and a worked sample containing input, decision, alternative, failure condition and evaluation. Use synthetic cases, not personal history."
+  },
+  {
+    "id": "E24",
+    "prompt": "For the same shopping-list product, give a frontend stale-search task, mobile offline-sync task and backend migration task. Each needs a worked solution, alternative and failure test. No framework versions are specified."
+  },
+  {
+    "id": "E25",
+    "prompt": "Prepare the same AI support workflow case for an AI product manager and an AI application engineer. Give distinct model answers and evaluation criteria. Account changes are costly; help articles can be stale."
+  },
+  {
+    "id": "E26",
+    "prompt": "No file writing. Submitted résumé v1 says I contributed to rollout. My edited answer explicitly says engineering owned code. Translate the answer into English and provide a continuation summary; don't overwrite the submitted version or upgrade ownership. Coaching in Chinese."
+  },
+  {
+    "id": "E27",
+    "prompt": "Only compare offers and provide a negotiation script: A guaranteed 20,000×14, B guaranteed 18,000×16 plus a conditional target bonus of 2 months; same unspecified currency, no exchange rates. My priority is guaranteed income. No interview preparation needed."
+  },
+  {
+    "id": "E28",
+    "prompt": "I need only 3 questions to ask my interviewer, then advice for a recorded AI interview tomorrow. I have text only; tell me whether my pronunciation and eye contact are good. No platform rules supplied."
+  },
+  {
+    "id": "L01",
+    "prompt": "Everything in English, including headings. Explain how to answer an interview question about a project with uncertain impact, and give a complete sample answer. All candidate and job details are synthetic. Candidate: Lee coordinated an onboarding checklist and weekly issue reviews with support; engineering delivered platform changes. Résumé says conversion improved 20%, but Lee cannot recall the denominator, comparison period or whether this was relative change. Lee has not managed people. Target JD: product manager responsible for activation, cross-functional delivery and evaluating retention impact. No company identity is supplied. Use only this input, no browsing."
+  },
+  {
+    "id": "L02",
+    "prompt": "中文讲解，英文完整答案。分别给自我介绍和项目贡献回答，明确数字未知。All candidate and job details are synthetic. Candidate: Lee coordinated an onboarding checklist and weekly issue reviews with support; engineering delivered platform changes. Résumé says conversion improved 20%, but Lee cannot recall the denominator, comparison period or whether this was relative change. Lee has not managed people. Target JD: product manager responsible for activation, cross-functional delivery and evaluating retention impact. No company identity is supplied. Use only this input, no browsing."
+  },
+  {
+    "id": "L03",
+    "prompt": "Mock in English, feedback in Chinese. Ask a question; candidate answers 'I responsible checklist, engineers build code.' Give next mock question, then candidate says '结束，中文反馈'. Provide feedback."
+  },
+  {
+    "id": "L04",
+    "prompt": "Responde solo en español, incluidos los títulos. Prepara una respuesta hipotética sobre cómo investigar una caída de conversión, con un ejemplo, una alternativa y una pregunta de seguimiento."
+  },
+  {
+    "id": "L05",
+    "prompt": "Réponds uniquement en français, y compris les titres. Prépare une réponse hypothétique sur la gestion d'un désaccord produit/technique, sans inventer mon expérience."
+  },
+  {
+    "id": "L06",
+    "prompt": "Translate into natural English for an interview: 我参与了项目，没有负责整个项目；转化率从15%到18%，增加了3个百分点；是否由我的工作导致尚不清楚。 Keep the meaning and numbers, then explain in Chinese."
+  },
+  {
+    "id": "L07",
+    "prompt": "Saved session: coaching English, answers English, mock English, Q5 pending about state recovery. User: 'A partir de ahora, solo español. Continúa la entrevista.' Continue the current mock topic, no new intake."
+  },
+  {
+    "id": "L08",
+    "prompt": "I speak English but the job is in Japan. Prepare questions about compensation structure and explain how to localize my interview preparation. Do not assume US practices or give current legal claims."
+  }
+]

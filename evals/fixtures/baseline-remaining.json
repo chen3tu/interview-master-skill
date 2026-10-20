@@ -1,0 +1,18 @@
+[
+  {
+    "id": "E03",
+    "prompt": "Coach me on causal attribution. Show a worked example first; do not ask me to try first. All candidate and job details are synthetic. Candidate: Lee coordinated an onboarding checklist and weekly issue reviews with support; engineering delivered platform changes. Résumé says conversion improved 20%, but Lee cannot recall the denominator, comparison period or whether this was relative change. Lee has not managed people. Target JD: product manager responsible for activation, cross-functional delivery and evaluating retention impact. No company identity is supplied. Use only this input, no browsing."
+  },
+  {
+    "id": "E05",
+    "prompt": "My submitted résumé says 20%, an old AI draft says 35%, neither has a denominator. Prepare the answer and continue the rest of preparation. All candidate and job details are synthetic. Candidate: Lee coordinated an onboarding checklist and weekly issue reviews with support; engineering delivered platform changes. Résumé says conversion improved 20%, but Lee cannot recall the denominator, comparison period or whether this was relative change. Lee has not managed people. Target JD: product manager responsible for activation, cross-functional delivery and evaluating retention impact. No company identity is supplied. Use only this input, no browsing."
+  },
+  {
+    "id": "E06",
+    "prompt": "I only have a JD: data analyst, define metrics, investigate conversion, design experiments. Analyze the role and tell me my fit. No résumé provided."
+  },
+  {
+    "id": "E08",
+    "prompt": "Compare a campus backend candidate with a senior backend candidate on migrating a datastore without losing writes. Give different expectations and one worked answer for each. Neither has supplied actual work history."
+  }
+]

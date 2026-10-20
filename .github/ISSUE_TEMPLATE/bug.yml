@@ -20,6 +20,7 @@ body:
         - 面试复盘
         - 薪资谈判与 Offer 决策
         - 安装或加载 Skill
+        - 多语言 / 语言切换 / 翻译含义
         - 其他
     validations:
       required: true
@@ -31,6 +32,12 @@ body:
       description: 说明发生了什么，以及结果为什么不符合预期。
     validations:
       required: true
+
+  - type: input
+    id: mode_languages
+    attributes:
+      label: 准备方式与语言 / Mode and languages
+      description: 例如完整准备；中文讲解、英文答案、英文模拟。无需提供真实简历。
 
   - type: textarea
     id: expected

@@ -1,5 +1,19 @@
 # Changelog
 
+## v4.0.0-rc.1 (Unreleased)
+
+- Configurable sprint, complete, coaching and mock modes; usable drafts before consolidated fact checks.
+- Evidence states, résumé-version boundaries and incremental continuation.
+- JD-to-task-to-question mapping with spoken answers, teaching and follow-ups.
+- Six professional directions with backend, frontend, mobile and AI application specialties and original synthetic work samples.
+- Adaptive pressure, immediate pause, observation coverage and non-duplicated evidence.
+- Multilingual coaching, answers and mocks; separate language preferences from hiring market.
+- English and Chinese documentation; additional-language scenarios with explicit validation limits.
+- Runtime reference reachability and release-boundary checks; retained reproducible ZIP packaging.
+- Corrected the legacy salary example: 18,000 × (16 + 2) = 324,000, with conditional bonus separated from guaranteed pay.
+
+This is a development candidate, not a released stable version. See the validation report for actual execution and host coverage.
+
 ## v3.0.0 (2026-04-06) — 公司调研 + 面经搜索 + 遗漏项审查 + 深度答案 + 模拟面试
 
 ### 新增

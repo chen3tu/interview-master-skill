@@ -22,7 +22,7 @@ body:
     id: scope
     attributes:
       label: 适用岗位或阶段
-      placeholder: 例如：销售岗 / 模拟面试阶段
+      placeholder: 例如：销售岗 / 模拟面试阶段 / 中文讲解与英文答案
     validations:
       required: true
 
