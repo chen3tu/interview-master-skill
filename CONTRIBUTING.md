@@ -23,3 +23,7 @@ If changing packaging, build twice and check reproducibility and package content
 Write original material or document compatible provenance. A publicly visible repository is not automatically permissively licensed. Do not import restricted third-party questions, diagrams or personal data.
 
 Describe the user-visible before/after behavior and relevant verification in the PR. Small, coherent changes are easier to review; preserve unrelated work.
+
+## Host portability
+
+Keep runtime instructions independent of a vendor, fixed installation path or mandatory named tool. Document per-host installation outside the runtime. Record host/model/version, exact package and actual loading evidence when claiming compatibility. A successful Codex run does not certify WorkBuddy or Claude. New host adapters need their own observed checks.

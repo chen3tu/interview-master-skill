@@ -1,0 +1,212 @@
+{
+  "note": "Actual CLI event summaries; local home/workspace paths redacted. Only completed commands, exit codes, output digests, file paths and terminal status retained. Hidden reasoning and global logs excluded. Raw output files retain generated content with links remapped for this repository.",
+  "runs": [
+    {
+      "name": "direct-offer.events",
+      "thread_id": "01a15751-2168-7020-a378-12aecd6b85f1",
+      "terminal_events": [
+        {
+          "type": "turn.completed",
+          "error": null
+        }
+      ],
+      "commands": [
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/interview-master/references/offer_evaluation.md'",
+          "exit_code": 0,
+          "output_sha256": "278bc46402b9ce8c3192b21809a6307b31f88a2628f221971f267a7f3ccc844e"
+        }
+      ],
+      "file_changes": []
+    },
+    {
+      "name": "implicit.events",
+      "thread_id": "01a157e8-7c38-71a3-80de-f6e05684f56b",
+      "terminal_events": [
+        {
+          "type": "turn.completed",
+          "error": null
+        }
+      ],
+      "commands": [
+        {
+          "command": "/bin/zsh -lc pwd",
+          "exit_code": 0,
+          "output_sha256": "0cee6065dd9ec0042789891e660a760b9a45e3171d32f7fc473e6769ffe34412"
+        },
+        {
+          "command": "/bin/zsh -lc \"rg --files --hidden -g AGENTS.md -g SKILL.md -g '\"'!node_modules'\"' -g '\"'!.git'\"' -g '\"'!.aws'\"' -g '\"'!.codex'\"'\"",
+          "exit_code": 0,
+          "output_sha256": "afaa1d2d99fe286da392044681619c00945589465ee40eee83c515e3047c1c5e"
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/interview-master/SKILL.md'",
+          "exit_code": 0,
+          "output_sha256": "80b69fa3e81722cd82c1a88ed0f463a7bc50434c872197b384b14058ce842425"
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/interview-master/references/{session_modes,evidence_and_state,language_and_locale,jd_question_design,role_catalog,competency_answer_template,deliverable_templates,competency_module_standard,case_study_guide}.md'",
+          "exit_code": 0,
+          "output_sha256": "ab22d95df7b7f551b35c067bd450c48c79f7c2d4af290f5eac732d86c0d83707"
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/interview-master/references/{role_data,early_career_and_transition,examples/data_diagnosis}.md'",
+          "exit_code": 0,
+          "output_sha256": "652c4acce090b43110cabdad94b4cba6988e8eb7573df454d6b360796dec52cb"
+        },
+        {
+          "command": "/bin/zsh -lc 'mkdir -p /private/tmp/activation-interview-practice'",
+          "exit_code": 0,
+          "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "command": "/bin/zsh -lc \"python3 - <<'PY'\nfrom pathlib import Path\nimport sqlite3\nfolder = Path('/private/tmp/activation-interview-practice')\nconnection = sqlite3.connect(':memory:')\nresults = []\nfor statement in (folder / 'work_sample.sql').read_text().split(';'):\n    if not statement.strip():\n        continue\n    cursor = connection.execute(statement)\n    if cursor.description:\n        rows = cursor.fetchall()\n        results.append(rows)\n        print([column[0] for column in cursor.description])\n        print(rows)\nassert len(results) == 3\nassert results[0] == [('Last week', 'Organic', 1000, 200, 20.0, 50.0), ('Last week', 'Paid', 1000, 100, 10.0, 50.0), ('This week', 'Organic', 500, 110, 22.0, 25.0), ('This week', 'Paid', 1500, 180, 12.0, 75.0)]\nassert results[1] == [('Last week', 2000, 300, 15.0), ('This week', 2000, 290, 14.5)]\nassert results[2] == [(15.0, 14.5, 17.0, 12.5, 2.0, -2.5, -0.5)]\nprint('PASS: all three result sets match the reference calculations.')\nPY\"",
+          "exit_code": 1,
+          "output_sha256": "31582c5b6bd2479083b7a739b11cec8946513f30b48fb7d18debc8d1879799a1"
+        },
+        {
+          "command": "/bin/zsh -lc \"python3 - <<'PY'\nfrom pathlib import Path\nimport sqlite3\nfolder = Path('/private/tmp/activation-interview-practice')\nconnection = sqlite3.connect(':memory:')\nresults = []\nstatement = ''\nfor line in (folder / 'work_sample.sql').read_text().splitlines(True):\n    statement += line\n    if not sqlite3.complete_statement(statement):\n        continue\n    cursor = connection.execute(statement)\n    statement = ''\n    if cursor.description:\n        rows = cursor.fetchall()\n        results.append(rows)\n        print([column[0] for column in cursor.description])\n        print(rows)\nassert len(results) == 3\nassert results[0] == [('Last week', 'Organic', 1000, 200, 20.0, 50.0), ('Last week', 'Paid', 1000, 100, 10.0, 50.0), ('This week', 'Organic', 500, 110, 22.0, 25.0), ('This week', 'Paid', 1500, 180, 12.0, 75.0)]\nassert results[1] == [('Last week', 2000, 300, 15.0), ('This week', 2000, 290, 14.5)]\nassert results[2] == [(15.0, 14.5, 17.0, 12.5, 2.0, -2.5, -0.5)]\nprint('PASS: all three result sets match the reference calculations.')\nPY\"",
+          "exit_code": 0,
+          "output_sha256": "4dbb1a561b66cac08a7f2ee7f11b38b56a39968ab41140c8051c64ea2dbba5f4"
+        }
+      ],
+      "file_changes": [
+        {
+          "path": "/private/tmp/activation-interview-practice/interview_practice.md",
+          "kind": "add"
+        },
+        {
+          "path": "/private/tmp/activation-interview-practice/work_sample.sql",
+          "kind": "add"
+        }
+      ]
+    },
+    {
+      "name": "mock-pause.events",
+      "thread_id": "01a157e4-f488-7081-ab2f-776eaed748d5",
+      "terminal_events": [
+        {
+          "type": "turn.completed",
+          "error": null
+        }
+      ],
+      "commands": [],
+      "file_changes": []
+    },
+    {
+      "name": "mock-resume.events",
+      "thread_id": "01a157e4-f488-7081-ab2f-776eaed748d5",
+      "terminal_events": [
+        {
+          "type": "turn.completed",
+          "error": null
+        }
+      ],
+      "commands": [],
+      "file_changes": []
+    },
+    {
+      "name": "mock-start.events",
+      "thread_id": "01a157e4-f488-7081-ab2f-776eaed748d5",
+      "terminal_events": [
+        {
+          "type": "turn.completed",
+          "error": null
+        }
+      ],
+      "commands": [
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/interview-master/SKILL.md'",
+          "exit_code": 0,
+          "output_sha256": "80b69fa3e81722cd82c1a88ed0f463a7bc50434c872197b384b14058ce842425"
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/interview-master/references/session_modes.md .agents/skills/interview-master/references/evidence_and_state.md .agents/skills/interview-master/references/language_and_locale.md .agents/skills/interview-master/references/mock_and_pressure.md .agents/skills/interview-master/references/interview_evaluation_criteria.md'",
+          "exit_code": 0,
+          "output_sha256": "47d522525f7c9de96adb44f13d3d640b4a90c4af6304fde3f6a29884810fbe95"
+        }
+      ],
+      "file_changes": []
+    },
+    {
+      "name": "preparation-resume.events",
+      "thread_id": "01a15751-2168-7020-a378-12aecd6b85f1",
+      "terminal_events": [
+        {
+          "type": "turn.completed",
+          "error": null
+        }
+      ],
+      "commands": [],
+      "file_changes": []
+    },
+    {
+      "name": "preparation-save.events",
+      "thread_id": "01a15751-2168-7020-a378-12aecd6b85f1",
+      "terminal_events": [
+        {
+          "type": "turn.completed",
+          "error": null
+        }
+      ],
+      "commands": [
+        {
+          "command": "/bin/zsh -lc \"python3 - <<'PY'\nfrom pathlib import Path\np = Path('results/preparation.md')\nprint('exists:', p.exists())\nif p.exists():\n    print(p.read_text())\nPY\"",
+          "exit_code": 0,
+          "output_sha256": "a847a32803862dbf125034eb5c1dff7722de64fa3d52b7f5c066a21d538d3074"
+        },
+        {
+          "command": "/bin/zsh -lc \"python3 - <<'PY'\nfrom pathlib import Path\np = Path('results/preparation.md').resolve()\ns = p.read_text(encoding='utf-8')\nassert p.is_file()\nfor title in ['1．岗位判断', '2．60 秒英文自我介绍', '3．针对性问题一：管理员权限体验', '4．针对性问题二：激活与数字归因', '5．针对性问题三：跨团队交付与个人贡献', '6．40 分钟准备安排', '7．集中事实核对清单']:\n    assert title in s, title\nassert s.count('**完整英文答案**') == 3\nassert s.count('- [ ]') == 5\nassert 'I also did not independently own an experiment.' in s\nassert 'I cannot establish that the checklist revision caused that increase.' in s\nassert (p.parent / '../.agents/skills/interview-master/SKILL.md').is_file()\nprint('Verified file:', p)\nprint('Bytes:', p.stat().st_size)\nprint('All seven sections, three complete answers, and five fact checks present.')\nPY\"",
+          "exit_code": 0,
+          "output_sha256": "4ea0c72e405eac8f8db1150d259ad64965f44e8e277573254b6c79e7412c15bf"
+        }
+      ],
+      "file_changes": [
+        {
+          "path": "<acceptance-workspace>/results/preparation.md",
+          "kind": "add"
+        }
+      ]
+    },
+    {
+      "name": "preparation.events",
+      "thread_id": "01a15751-2168-7020-a378-12aecd6b85f1",
+      "terminal_events": [
+        {
+          "type": "turn.failed",
+          "error": {
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 1:40 PM."
+          }
+        }
+      ],
+      "commands": [
+        {
+          "command": "/bin/zsh -lc \"pwd; rg --files -g AGENTS.md -g 'SKILL.md' -g '\"'!node_modules'\"' -g '\"'!results'\"' .agents . 2>/dev/null\"",
+          "exit_code": 0,
+          "output_sha256": "f5ff5fd12472972438c77bc22d01e4fc6e5f9232be9ed3ffe5f01d8875fad504"
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/interview-master/SKILL.md'",
+          "exit_code": 0,
+          "output_sha256": "80b69fa3e81722cd82c1a88ed0f463a7bc50434c872197b384b14058ce842425"
+        },
+        {
+          "command": "/bin/zsh -lc \"python3 - <<'PY'\nfrom pathlib import Path\nbase=Path('.agents/skills/interview-master/references')\nfor name in ['session_modes.md','evidence_and_state.md','language_and_locale.md','jd_question_design.md','role_catalog.md','competency_answer_template.md','deliverable_templates.md','job_analysis_template.md','interview_advanced_guide.md','behavioral_question_bank.md']:\n print('\\\\n### '+name+'\\\\n'+(base/name).read_text())\nPY\"",
+          "exit_code": 0,
+          "output_sha256": "40fda7a3ecd5a75f9ed35d2f4deb0283036a58fb06cf4ca391646d2aa8e2b619"
+        },
+        {
+          "command": "/bin/zsh -lc \"python3 - <<'PY'\nfrom pathlib import Path\np=Path('.agents/skills/interview-master/references/role_product_manager.md')\nprint(p.read_text())\np=Path('results/preparation.md')\nprint('\\\\nOUTPUT_FILE_EXISTS:',p.exists())\nPY\"",
+          "exit_code": 0,
+          "output_sha256": "a24722857b3b3aba097fd624da8794ebf5ebf97a564dd565a67df4190ace595d"
+        },
+        {
+          "command": "/bin/zsh -lc \"python3 - <<'PY'\nfrom pathlib import Path\nbase=Path('.agents/skills/interview-master/references')\nfor name in ['examples/product_decision.md','role_data.md']:\n print('\\\\n### '+name+'\\\\n'+(base/name).read_text())\nPY\"",
+          "exit_code": 0,
+          "output_sha256": "0203e47d8736d0b8a256c21fab116d1b1a8ae1a72c851780b29a2e27de435562"
+        }
+      ],
+      "file_changes": []
+    }
+  ]
+}

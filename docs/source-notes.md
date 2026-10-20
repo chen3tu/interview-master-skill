@@ -16,7 +16,7 @@ No third-party source text or diagrams are copied into the runtime. In particula
 
 Personal coaching experience informed the general fact/method/decision structure, but no real candidate biography, company-specific preparation or personal metric is included.
 
-Installation documentation was checked against [Claude's official guide](https://support.claude.com/en/articles/12512180-use-skills-in-claude) on 2026-10-20; this does not imply live host validation.
+Installation documentation was checked against official Codex, WorkBuddy and Claude sources on 2026-10-20; see [compatibility](compatibility.md). Actual Codex CLI execution is separately documented in the [host acceptance report](../evals/reports/codex-acceptance.md); WorkBuddy and Claude were not live-tested.
 
 ## Research inventory (2026-10-19 snapshot)
 

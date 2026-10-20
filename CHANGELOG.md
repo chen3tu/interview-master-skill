@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.0.0-rc.2 (Unreleased)
+
+- Clarified host-neutral Agent Skills packaging and reference resolution across Codex, WorkBuddy and Claude.
+- Replaced the Claude-only release gate with user-requested live Codex acceptance; other hosts retain explicit untested status.
+- Added platform installation guidance, capability-change explanation and evidence-linked Chinese/English README redesign.
+- Local candidate only. GitHub push requires the maintainer's explicit acceptance.
+
 ## v4.0.0-rc.1 (Unreleased)
 
 - Configurable sprint, complete, coaching and mock modes; usable drafts before consolidated fact checks.

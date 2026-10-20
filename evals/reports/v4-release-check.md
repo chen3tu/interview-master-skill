@@ -1,45 +1,44 @@
-# v4.0.0-rc.1 release check
+# v4.0.0-rc.2 release check
 
-2026-10-20. **Locally validated development candidate, not a formal release.** Live-host installation remains an open gate.
+2026-10-20. **Local candidate; user acceptance required before any GitHub push.**
 
 ## Candidate identity
 
-- Source baseline: de3a72cd9493f09d3c33079587e37130b62cbd2b, rechecked through GitHub before implementation.
-- Working branch: upgrade/v4, isolated clone; original checkout preserved.
-- Runtime source commit: 2b72fec0406e2578e40a4c2b8ab266307888c95f; tooling commit: 65af548.
-- Archive: dist/interview-master-v4.0.0-rc.1.zip
-- SHA-256: eb558fb64d0acacae9493a7406ae211bd6137d0da8a0485932168636a98929cf
-- Size: 63,808 bytes; 41 files: SKILL.md plus 40 references.
-- dist/manifest.json records the complete payload list and checks. Build outputs are intentionally ignored by Git; regenerate with the README command.
+- Baseline: `de3a72cd9493f09d3c33079587e37130b62cbd2b`.
+- Branch: `upgrade/v4`, isolated checkout.
+- Runtime commit: `918a20b0650494e283ed953660ade721130fbddf`.
+- Archive: `dist/interview-master-v4.0.0-rc.2.zip`.
+- SHA-256: `466d5b10bf400edbb42ccf17c687b529454f205aa921107931b80b0671342ee2`.
+- Size: 64,049 bytes; 41 files: SKILL.md plus 40 references.
+- `dist/manifest-rc2.json` records payload identity locally. Build artifacts remain ignored by Git; use the README build command to regenerate.
 
-## Completed checks
+## Verification
 
-| Check | Observed result |
+| Check | Result |
 |---|---|
-| Baseline unit tests | 11 passed before changes |
-| Current unit tests | 17 passed; see [raw log](local-checks.md) |
-| Skill-creator frontmatter validator | Skill is valid; existing cached PyYAML used, no global install |
-| Runtime graph | All runtime references exist inside the release payload and are reachable |
-| Packaging | Two builds byte-identical; extracted runtime validation passed |
-| Distribution boundary | Only runtime payload included; no tasks, eval outputs, candidate workspaces or development docs |
-| Bounded identifier scan | No matches for local user path/name/personal-skill identifiers or private-key marker; synthetic samples manually reviewed |
-| Behavior | 36 categories, eight v3 baseline cases, six paired role cases, two fresh package scenarios executed and reviewed; see [behavior report](v4-behavior-report.md) |
-| Data sample | SQLite example checked with duplicates, absent events and ineligible users; event-window precondition documented |
-| Arithmetic | Mix shift and fixed/target compensation reviewed; old salary arithmetic corrected |
-| Documentation | Chinese/English README and migration reviewed; official Claude installation documentation checked |
+| Unit tests | 17 passed after the host-neutral runtime change |
+| Frontmatter | Skill-creator validator passed; cached dependency, no global installation |
+| Runtime graph | All shipped references reachable and inside the runtime package |
+| Deterministic build | Two rc.2 builds byte-identical |
+| Installed payload | Actual Codex project installation matches all 41 ZIP payload files byte for byte |
+| Prior behavior | 58 reviewed rc.1 outputs; [report](v4-behavior-report.md) |
+| Actual Codex execution | Installed package loaded by three CLI sessions; all 10 bounded criteria passed, including preparation, file delivery, pressure/pause/language continuation, data work sample and direct offer comparison; exact current matrix in [host report](codex-acceptance.md) |
+| English work sample | Generated SQL executed in SQLite; three result sets verified after correcting the generated validation script's SQL splitting |
+| Documentation | Chinese/English README, host installation matrix, capability report, migration and contribution guidance updated |
+| Research | 21 categorized interview-related projects; three high-star documentation examples, with explicit source and reuse boundaries |
 
-The identifier scan is a bounded check, not a guarantee against every possible sensitive string. Examples were authored as synthetic teaching material. Backend and AI examples were reviewed as designs; no real service or load/failure test was run.
+## Remaining release gate and limits
 
-## Open gates and measured limits
+**The maintainer must explicitly accept the candidate before GitHub publication.** Local validation does not imply that approval.
 
-1. **Live Claude installation not performed.** Documentation verification and direct reading of an extracted ZIP do not test installer registration, automatic activation, reference loading in Claude, or updates of an existing user workspace. No accessible live Claude session was used. Complete one preparation and one mock/pause scenario in the target host before declaring compatibility verified.
-2. E01–E08 baseline cases and six fixed candidate/JD comparisons are complete; see [role comparison](role-comparison.md). The cases share evaluator context within batches and are small synthetic samples, not calibrated performance estimates.
-3. E01 produced useful first-turn material with zero blocking intake in both v3 and v4. The planned relative speed improvement is not demonstrated. No latency or hiring-success claim is made.
-4. Batch cases share context within each of three evaluators. Final source additions received two fresh package checks plus six fixed role cases, not a full rerun of every category. No native-language expert audit or long-conversation reliability estimate.
-5. Candidate release notes and rollback guidance are ready, but live-host acceptance is still open. Keep rc.1 status.
+The user's updated scope chooses Codex as the primary acceptance host. This supersedes the original mandatory Claude gate without pretending that Claude was tested. WorkBuddy and Claude have documented installation paths but no live client validation. Codex desktop skill-picker behavior, old-workspace upgrades and cross-host state migration were not tested.
 
-## Publication and installed copies
+The original run was interrupted by account quota and later resumed; CLI WebSocket retries fell back to HTTP. A read-only resume correctly delivered text without claiming a saved file; a subsequent explicit workspace-write resume saved it. All exceptions and final per-case outcomes are documented in the host report.
 
-No remote push, pull request, merge or Release was performed. Installed generic and personal skills remain unchanged. Review the candidate from this checkout and ZIP. [Migration and rollback](../../docs/migration-v4.md) preserve user résumés, facts and sessions outside the skill installation.
+No proven relative speed improvement, native-language certification, interview-success increase or long-session reliability estimate. v3 already performed well in the small baseline sample. See [capability explanation](../../docs/capability-upgrade-v4.md).
 
-[Release text draft](../../docs/release-v4-rc1.md) · [Execution ledger](../../tasks/todo.md)
+## Publication and rollback
+
+No push, PR, merge or Release performed. Global public/personal skill installations and the original checkout remain unchanged; only the separate Codex acceptance project contains rc.2.
+
+[Migration and rollback](../../docs/migration-v4.md) · [rc.2 release text](../../docs/release-v4-rc2.md) · [execution ledger](../../tasks/todo.md) · [historical rc.1 check](v4-rc1-release-check.md)

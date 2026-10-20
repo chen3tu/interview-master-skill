@@ -1,6 +1,6 @@
 # Migrating to v4 / v4迁移
 
-Development candidate: 4.0.0-rc.1. Keep installation name interview-master.
+Development candidate: 4.0.0-rc.2. Keep installation name interview-master.
 
 ## What changes
 Preparation no longer globally requires one-question-at-a-time intake. Complete mode creates a usable draft first; mock mode remains sequential. Facts are reused and checked in batches. Role modules use worked samples; mock feedback separates coverage from performance.
@@ -19,3 +19,7 @@ Back up the previous skill package. Install the complete candidate folder/ZIP in
 
 ## Rollback
 Replace only the skill installation with the prior package. Retain candidate data and recent drafts; do not reverse-migrate by deleting facts or edited documents. If a new draft conflicts with a submitted résumé, preserve both and explain the discrepancy.
+
+## Host selection
+
+Use the same package in supported Agent Skills hosts. Codex is the acceptance host selected by the maintainer; Claude is not a mandatory release gate. See [compatibility](compatibility.md) and [Codex acceptance](../evals/reports/codex-acceptance.md). WorkBuddy/Claude live checks are separate from format portability.

@@ -39,3 +39,11 @@ Skill is valid!
 ## Final documentation and artifact check
 
 Repository validation passed; git diff --check returned no errors. All 58 actual output files retained. Final ZIP hash unchanged after documentation updates. Fresh evaluators read the exact 41 payload files in the final ZIP.
+
+## rc.2 final artifact and documentation check
+
+2026-10-20. After the host-neutral runtime change, the 17 unit tests passed again. The final documentation check returned `Repository validation passed.` and `git diff --check` returned no errors. Skill-creator returned `Skill is valid!`.
+
+The rc.2 ZIP remains 64,049 bytes, SHA-256 `466d5b10bf400edbb42ccf17c687b529454f205aa921107931b80b0671342ee2`. Every one of its 41 payload files matches both the final runtime source and the actual Codex project installation byte for byte. A bounded scan of the new host evidence and delivery reports found no local home path, local username or private-key marker. This is not a comprehensive secret-detection guarantee.
+
+Real-host checks are documented separately in [Codex acceptance](codex-acceptance.md): 10 bounded criteria passed in three sessions, seven completed turns and one quota-interrupted initial turn. Environment interruptions and the generated SQL verifier's initial failure remain disclosed.
