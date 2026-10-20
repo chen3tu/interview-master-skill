@@ -19,3 +19,15 @@ Authoritative remote results: [main history](https://github.com/chen3tu/intervie
 The README provides a fixed-version download, a fresh-install command that stops when an installation exists, actual output examples, separate host validation status, and contribution routes. GitHub About/Topics describe the cross-agent skill. High-star README references are documented in [design notes](readme-design-notes.md).
 
 The original acceptance reports preserve their pre-publication state as historical evidence and carry an acceptance update. No additional WorkBuddy/Claude client testing or stable-release certification is implied by publication.
+
+## Observed remote results
+
+- Main publication commit: `43dd09e470318ebb18de8fc733542b1677f592da`, pushed normally from the verified baseline.
+- [Publication CI run](https://github.com/chen3tu/interview-master-skill/actions/runs/39380382137): completed successfully.
+- GitHub prerelease created with ZIP and `SHA256SUMS.txt`; both assets report uploaded.
+- Downloaded the public ZIP and verified its SHA-256 against the accepted artifact.
+- Ran the exact README installation command in a fresh temporary project; all 41 installed files matched the accepted payload. A second run correctly stopped at the existing-installation guard.
+- Read the remote main README through GitHub and verified it matches the published local file.
+- GitHub About and Topics now include cross-agent positioning, Codex, WorkBuddy, mock interviews and multilingual use.
+
+This follow-up changes publication records only; the release tag and runtime ZIP remain unchanged.

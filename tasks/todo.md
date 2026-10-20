@@ -1,6 +1,6 @@
 # Interview Master v4 实施台账
 
-2026-10-20。状态：本地候选版已实现并验证，Codex CLI宿主验收完成；维护者已明确验收通过，GitHub推送进入执行阶段。
+2026-10-20。状态：本地候选版已实现并验证，Codex CLI宿主验收完成；维护者已明确验收通过，GitHub main已更新，rc.2预发布包已上传并核验。
 
 这里记录当前实际状态；[原始逐项验收设计](todo-design.md)完整保留，未悄悄删除未满足条件。[总计划](plan.md)与[行为报告](../evals/reports/v4-behavior-report.md)记录范围与偏差。
 
@@ -52,11 +52,12 @@
 - [ ] 原计划相对提速得到证实；目前v3/v4均在第一轮交付，不能作该结论。
 - [x] 真实Codex CLI项目安装、加载、完整准备、保存及模拟续接验收；10项有限检查通过。
 - [ ] 旧工作区升级、桌面选择器、WorkBuddy/Claude客户端及跨宿主状态迁移；不属于本次已验证范围。
-- [ ] 正式发布门槛全部通过。
+- [x] 维护者验收通过，main推送、rc.2预发布、公开下载及安装验证完成。
+- [ ] 后续稳定版发布；本次保留rc.2预发布标识。
 
 ## 交付状态
 
-保留4.0.0-rc.2开发候选状态。没有覆盖已安装的公开版/个人版，没有推送、创建PR或发布Release。剩余工作具体见[发布检查](../evals/reports/v4-release-check.md)。反馈填写样例见[合成反馈](../evals/fixtures/feedback-examples.md)。
+4.0.0-rc.2已按预发布版本公开。main正常快进推送，Release包含已验收ZIP与SHA256校验文件；GitHub CI及公开安装命令验证通过。没有覆盖原有全局公开版/个人版安装，也没有创建PR。详见[发布执行记录](../docs/publication-v4-rc2.md)与[发布检查](../evals/reports/v4-release-check.md)。反馈填写样例见[合成反馈](../evals/fixtures/feedback-examples.md)。
 
 ## 2026-10-20用户补充范围
 
