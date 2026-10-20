@@ -1,4 +1,7 @@
 .worktrees/
 __pycache__/
+*.pyc
+dist/
+__pycache__/
 *.py[cod]
 dist/

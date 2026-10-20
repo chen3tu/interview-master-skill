@@ -105,6 +105,36 @@ class ValidateRepositoryTests(unittest.TestCase):
 
         self.assertEqual(validate_repository(self.root), [])
 
+    def test_runtime_reference_cannot_depend_on_unbundled_document(self) -> None:
+        (self.root / "references" / "guide.md").write_text(
+            "[Read more](../README.md)\n", encoding="utf-8"
+        )
+        self.assertTrue(any("outside release payload" in e for e in validate_repository(self.root)))
+
+    def test_orphan_runtime_reference_is_reported(self) -> None:
+        (self.root / "references" / "orphan.md").write_text("# Orphan\n")
+        self.assertIn(
+            "Runtime reference is unreachable: references/orphan.md",
+            validate_repository(self.root),
+        )
+
+    def test_nested_unicode_reference_and_cycle_are_supported(self) -> None:
+        nested = self.root / "references" / "examples"
+        nested.mkdir()
+        (nested / "中文.md").write_text("[Back](../guide.md)\n", encoding="utf-8")
+        (self.root / "references" / "guide.md").write_text(
+            "[Example](examples/%E4%B8%AD%E6%96%87.md)\n", encoding="utf-8"
+        )
+        self.assertEqual(validate_repository(self.root), [])
+
+    def test_existing_file_outside_repository_is_not_runtime_dependency(self) -> None:
+        outside = self.root.parent / "outside.md"
+        outside.write_text("# Outside\n")
+        (self.root / "references" / "guide.md").write_text(
+            "[Outside](../../outside.md)\n"
+        )
+        self.assertTrue(any("outside release payload" in e for e in validate_repository(self.root)))
+
 
 if __name__ == "__main__":
     unittest.main()

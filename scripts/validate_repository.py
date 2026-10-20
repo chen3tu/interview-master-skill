@@ -94,6 +94,59 @@ def _markdown_errors(root: Path) -> list[str]:
     return errors
 
 
+def validate_runtime(root: Path) -> list[str]:
+    """Check that runtime references are discoverable and contained in the ZIP."""
+    root = root.resolve()
+    entry = root / "SKILL.md"
+    references = root / "references"
+    sources = [entry]
+    if references.is_dir() and not references.is_symlink():
+        sources.extend(sorted(references.rglob("*.md")))
+    errors: list[str] = []
+    graph: dict[Path, set[Path]] = {}
+    for source in sources:
+        if not source.is_file() or source.is_symlink():
+            continue
+        try:
+            text = source.read_text(encoding="utf-8")
+        except (OSError, UnicodeError):
+            errors.append(f"Unable to read runtime file: {source.relative_to(root)}")
+            continue
+        targets = [
+            (source.parent, target)
+            for raw in MARKDOWN_LINK_RE.findall(text)
+            if (target := _local_link_target(raw)) is not None
+        ]
+        targets.extend((root, target) for target in REFERENCE_LITERAL_RE.findall(text))
+        edges: set[Path] = set()
+        for base, target in targets:
+            resolved = (base / target).resolve()
+            in_payload = resolved == entry or resolved.is_relative_to(references)
+            if Path(target).is_absolute() or not in_payload:
+                errors.append(
+                    f"{source.relative_to(root)} runtime link outside release payload: {target}"
+                )
+            elif not resolved.is_file():
+                errors.append(
+                    f"{source.relative_to(root)} runtime target missing or not a file: {target}"
+                )
+            else:
+                edges.add(resolved)
+        graph[source.resolve()] = edges
+    reached: set[Path] = set()
+    pending = [entry]
+    while pending:
+        source = pending.pop()
+        if source in reached:
+            continue
+        reached.add(source)
+        pending.extend(graph.get(source, set()) - reached)
+    for source in graph:
+        if source != entry and source not in reached:
+            errors.append(f"Runtime reference is unreachable: {source.relative_to(root)}")
+    return sorted(set(errors))
+
+
 def validate_repository(root: Path) -> list[str]:
     """Return repository validation errors, or an empty list when valid."""
     root = root.resolve()
@@ -117,6 +170,7 @@ def validate_repository(root: Path) -> list[str]:
         errors.extend(_frontmatter_errors(skill_path))
 
     errors.extend(_markdown_errors(root))
+    errors.extend(validate_runtime(root))
     return sorted(set(errors))
 
 

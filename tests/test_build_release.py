@@ -12,7 +12,9 @@ class BuildReleaseTests(unittest.TestCase):
         self.temp_dir = tempfile.TemporaryDirectory()
         self.root = Path(self.temp_dir.name) / "repository"
         (self.root / "references" / "nested").mkdir(parents=True)
-        (self.root / "SKILL.md").write_text("# Skill\n", encoding="utf-8")
+        (self.root / "SKILL.md").write_text(
+            "# Skill\n\n[Guide](references/guide.md)\n", encoding="utf-8"
+        )
         (self.root / "references" / "guide.md").write_text(
             "# Guide\n", encoding="utf-8"
         )
@@ -48,6 +50,20 @@ class BuildReleaseTests(unittest.TestCase):
         second_hash = hashlib.sha256(second.read_bytes()).hexdigest()
 
         self.assertEqual(first_hash, second_hash)
+
+    def test_development_and_candidate_files_are_not_packaged(self) -> None:
+        for folder in ("evals", "tasks", "interview-workspace"):
+            (self.root / folder).mkdir()
+            (self.root / folder / "private.md").write_text("synthetic private marker")
+        archive = build_release(self.root, "4.0.0-rc.1", self.root / "dist")
+        with zipfile.ZipFile(archive) as bundle:
+            self.assertFalse(any("private.md" in name for name in bundle.namelist()))
+
+    def test_runtime_dependency_on_repository_document_is_rejected(self) -> None:
+        guide = self.root / "references" / "guide.md"
+        guide.write_text("[Dependency](../README.md)\n", encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "outside release payload"):
+            build_release(self.root, "4.0.0-rc.1", self.root / "dist")
 
     def test_symlinked_payload_file_is_rejected(self) -> None:
         external_path = Path(self.temp_dir.name) / "private.txt"

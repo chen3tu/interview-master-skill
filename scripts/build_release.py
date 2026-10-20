@@ -8,6 +8,11 @@ import stat
 import zipfile
 from pathlib import Path
 
+try:
+    from .validate_repository import validate_runtime
+except ImportError:  # Direct invocation: python3 scripts/build_release.py
+    from validate_repository import validate_runtime
+
 
 ARCHIVE_ROOT = Path("interview-master")
 FIXED_TIMESTAMP = (2026, 4, 6, 0, 0, 0)
@@ -42,6 +47,10 @@ def _payload_files(root: Path) -> list[Path]:
 def build_release(root: Path, version: str, output_dir: Path) -> Path:
     """Build and return a deterministic Interview Master release archive."""
     root = root.resolve()
+    payload = _payload_files(root)
+    runtime_errors = validate_runtime(root)
+    if runtime_errors:
+        raise ValueError("Invalid runtime references: " + "; ".join(runtime_errors))
     output_dir.mkdir(parents=True, exist_ok=True)
     archive_path = output_dir / f"interview-master-v{version}.zip"
 
@@ -51,7 +60,7 @@ def build_release(root: Path, version: str, output_dir: Path) -> Path:
         compression=zipfile.ZIP_DEFLATED,
         compresslevel=9,
     ) as bundle:
-        for source_path in _payload_files(root):
+        for source_path in payload:
             archive_name = ARCHIVE_ROOT / source_path.relative_to(root)
             info = zipfile.ZipInfo(archive_name.as_posix(), FIXED_TIMESTAMP)
             info.compress_type = zipfile.ZIP_DEFLATED
