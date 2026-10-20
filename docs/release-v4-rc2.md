@@ -1,4 +1,4 @@
-# Interview Master v4.0.0-rc.2 — local release draft
+# Interview Master v4.0.0-rc.2 — maintainer-accepted prerelease
 
 This candidate makes interview preparation configurable across modes, roles and languages, with a host-neutral Agent Skill package for Codex, WorkBuddy, Claude and compatible agents.
 
@@ -24,4 +24,4 @@ Use the complete `interview-master/` directory from the ZIP. Follow [host-specif
 Archive: `interview-master-v4.0.0-rc.2.zip`  
 SHA-256: `466d5b10bf400edbb42ccf17c687b529454f205aa921107931b80b0671342ee2`
 
-**Status: awaiting maintainer acceptance. This text is a draft, not an already published GitHub Release.**
+**Maintainer acceptance: 2026-10-20.** The maintainer explicitly authorized GitHub publication. This prerelease retains the exact runtime payload tested in Codex. [Publication record](publication-v4-rc2.md).

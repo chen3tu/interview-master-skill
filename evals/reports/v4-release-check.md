@@ -1,5 +1,6 @@
 # v4.0.0-rc.2 release check
 
+> Publication update (2026-10-20): the maintainer explicitly accepted this candidate and authorized GitHub publication. The report below preserves the original pre-publication findings and limits. Runtime payload is unchanged.
 2026-10-20. **Local candidate; user acceptance required before any GitHub push.**
 
 ## Candidate identity

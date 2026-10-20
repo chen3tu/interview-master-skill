@@ -1,11 +1,12 @@
 # Changelog
 
-## v4.0.0-rc.2 (Unreleased)
+## v4.0.0-rc.2 (2026-10-20) — maintainer-accepted prerelease
 
 - Clarified host-neutral Agent Skills packaging and reference resolution across Codex, WorkBuddy and Claude.
 - Replaced the Claude-only release gate with user-requested live Codex acceptance; other hosts retain explicit untested status.
 - Added platform installation guidance, capability-change explanation and evidence-linked Chinese/English README redesign.
-- Local candidate only. GitHub push requires the maintainer's explicit acceptance.
+- Maintainer accepted the Codex-tested candidate and authorized GitHub publication on 2026-10-20. Runtime payload is unchanged from the accepted ZIP.
+- Added fixed-version installation/download links, real output previews, live CI status, and a cross-agent repository description.
 
 ## v4.0.0-rc.1 (Unreleased)
 
@@ -19,7 +20,7 @@
 - Runtime reference reachability and release-boundary checks; retained reproducible ZIP packaging.
 - Corrected the legacy salary example: 18,000 × (16 + 2) = 324,000, with conditional bonus separated from guaranteed pay.
 
-This is a development candidate, not a released stable version. See the validation report for actual execution and host coverage.
+The rc.1 section records development history. The accepted rc.2 remains a prerelease; see the validation report for actual execution and host coverage.
 
 ## v3.0.0 (2026-04-06) — 公司调研 + 面经搜索 + 遗漏项审查 + 深度答案 + 模拟面试
 

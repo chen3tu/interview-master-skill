@@ -1,5 +1,6 @@
 # Codex 实际宿主验收报告
 
+> Publication update (2026-10-20): the maintainer explicitly accepted this candidate and authorized GitHub publication. The report below preserves the original pre-publication findings and limits. Runtime payload is unchanged.
 2026-10-20 · Interview Master **4.0.0-rc.2** · 本地候选版，尚未推送。
 
 ## 验收结论

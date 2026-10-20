@@ -1,12 +1,14 @@
 # Interview Master
 
+[![Validate](https://github.com/chen3tu/interview-master-skill/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/chen3tu/interview-master-skill/actions/workflows/validate.yml) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 **把真实经历变成能讲清、能追问、能练习的面试准备。**
 
 面向 **Codex、WorkBuddy、Claude 及支持 Agent Skills 的 Agent** 的通用面试 Skill。同一份技能包，按目标岗位生成完整答案和工作样本，也能作为教练开展多语言、可调强度的模拟面试。
 
 [English](README.en.md) · [安装与兼容](docs/compatibility.md) · [能力提升说明](docs/capability-upgrade-v4.md) · [Codex验收](evals/reports/codex-acceptance.md) · [贡献](CONTRIBUTING.md)
 
-> **当前：v4.0.0-rc.2，本地候选版，等待维护者验收。** 尚未推送或发布到 GitHub。宿主实测与格式兼容分别记录，不承诺所有模型效果相同。
+> **v4.0.0-rc.2 已通过维护者验收，按预发布版本提供。** [下载技能 ZIP](https://github.com/chen3tu/interview-master-skill/releases/download/v4.0.0-rc.2/interview-master-v4.0.0-rc.2.zip) · [版本说明](https://github.com/chen3tu/interview-master-skill/releases/tag/v4.0.0-rc.2)。Codex CLI 已实测；WorkBuddy / Claude 的格式兼容与安装说明已核对，客户端尚未实测。
 
 ## 一句话开始
 
@@ -20,6 +22,41 @@
 ```
 
 你会得到岗位重点、经历证据、自我介绍、项目回答、针对性题目与答案，以及下一步练习。需要先补充什么，由已有材料决定，不要求先填完整问卷。
+
+## 安装与第一次使用
+
+**Codex（项目级）**：在你的面试准备目录执行以下命令，再从该目录开启新会话。需要 `curl` 和 `unzip`；已有安装先阅读[升级与回退](docs/migration-v4.md)。
+
+```sh
+# Run from the project where you prepare for interviews (macOS / Linux).
+(
+  set -eu
+  if [ -e .agents/skills/interview-master ]; then
+    echo 'interview-master already exists; follow the migration guide before updating.'
+    exit 1
+  fi
+  skill_download=$(mktemp -d)
+  curl -fL 'https://github.com/chen3tu/interview-master-skill/releases/download/v4.0.0-rc.2/interview-master-v4.0.0-rc.2.zip' \
+    -o "$skill_download/interview-master.zip"
+  mkdir -p .agents/skills
+  unzip -q "$skill_download/interview-master.zip" -d .agents/skills
+)
+```
+
+**WorkBuddy / Claude**：下载同一个 [ZIP](https://github.com/chen3tu/interview-master-skill/releases/download/v4.0.0-rc.2/interview-master-v4.0.0-rc.2.zip)，从各自技能管理界面导入并启用。[分宿主步骤](docs/compatibility.md)
+
+然后发送上方的一句话请求，并附上目标JD和真实经历。验证入口应为 `.agents/skills/interview-master/SKILL.md`，并能读取旁边的 `references/`。
+
+<details>
+<summary>直接看看会得到什么</summary>
+
+以下均为合成输入在真实 Codex CLI 中生成的输出：
+
+- [产品岗完整准备稿](evals/codex-host/outputs/preparation.md)：岗位映射、英文自我介绍、三道完整答案与追问、40分钟计划、事实核对。
+- [数据岗英文练习包](evals/codex-host/outputs/interview_practice.md)：指标拆解、决策备忘录、替代解释与[可运行SQL](evals/codex-host/outputs/work_sample.sql)。
+- [压力面试](evals/codex-host/outputs/mock-start.md) → [暂停与英文示范](evals/codex-host/outputs/mock-pause.md) → [西语继续原题](evals/codex-host/outputs/mock-resume.md)。
+
+</details>
 
 ## 选择适合你的节奏
 
@@ -50,7 +87,7 @@
 我想用中文理解思路、用英语练习面试。请从一道相关问题开始。
 ```
 
-有同名旧版时选中项目安装路径，避免误用。当前候选包先在本地构建，用户验收后才推送；不要把远端现有正式版当作本候选版本。
+有同名旧版时选中项目安装路径，避免误用。v4仍使用rc版本号；请从上方固定版本链接下载，不要用泛指“latest”的链接混淆v3稳定版与v4预发布版。
 
 ## 多语言，保留同一套事实
 
@@ -118,7 +155,7 @@ flowchart LR
 
 ## 开发与贡献
 
-在仓库根目录构建候选包：
+从源码构建同一运行包（仅开发者需要Python）：
 
 ```sh
 python3 -m unittest discover -s tests -v
@@ -128,6 +165,6 @@ python3 scripts/build_release.py --version 4.0.0-rc.2 --output-dir dist
 
 产物为 `dist/interview-master-v4.0.0-rc.2.zip`。开发文档、评测、会话与用户资料不进入运行包。
 
-欢迎提交可复现问题、语言修正和有完整解法的岗位模块。[贡献指南](CONTRIBUTING.md) · [路线图](docs/roadmap.md) · [版本记录](CHANGELOG.md) · [21项目调研](docs/source-notes.md) · [说明设计依据](docs/readme-design-notes.md)
+欢迎[报告问题](https://github.com/chen3tu/interview-master-skill/issues/new/choose)、修正语言和贡献有完整解法的岗位模块。[贡献指南](CONTRIBUTING.md) · [路线图](docs/roadmap.md) · [版本记录](CHANGELOG.md) · [21项目调研](docs/source-notes.md) · [说明设计依据](docs/readme-design-notes.md)
 
 MIT License。外链资料保留各自许可。候选人事实不应进入公开仓库，Skill不会自行申请岗位、联系他人或发布材料。

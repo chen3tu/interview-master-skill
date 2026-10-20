@@ -1,12 +1,14 @@
 # Interview Master
 
+[![Validate](https://github.com/chen3tu/interview-master-skill/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/chen3tu/interview-master-skill/actions/workflows/validate.yml) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 **Turn real experience into interview answers you can explain, defend and practice.**
 
 A multilingual interview skill for **Codex, WorkBuddy, Claude and agents supporting Agent Skills**. Use the same package to prepare tailored answers and worked exercises, learn professional methods, and practice adaptive interviews.
 
 [中文](README.md) · [Installation and compatibility](docs/compatibility.md) · [Capability changes](docs/capability-upgrade-v4.md) · [Codex acceptance](evals/reports/codex-acceptance.md) · [Contributing](CONTRIBUTING.md)
 
-> **v4.0.0-rc.2 is a local candidate awaiting maintainer acceptance.** It has not been pushed or published to GitHub. Format portability and verified host behavior are reported separately.
+> **v4.0.0-rc.2 is maintainer-accepted and distributed as a prerelease.** [Download the skill ZIP](https://github.com/chen3tu/interview-master-skill/releases/download/v4.0.0-rc.2/interview-master-v4.0.0-rc.2.zip) · [Release notes](https://github.com/chen3tu/interview-master-skill/releases/tag/v4.0.0-rc.2). Codex CLI was tested; WorkBuddy and Claude have documented installation routes but no client execution in this release.
 
 ## Start with one request
 
@@ -20,6 +22,41 @@ Do not turn participation into ownership or invent missing results.
 ```
 
 You receive role priorities, evidence mapping, an introduction, project answers, targeted questions and a useful next exercise. Missing facts are handled according to their effect on the task.
+
+## Install and try it
+
+**Codex (project-local)**: run this from your interview-preparation project, then start a new session there. Requires `curl` and `unzip` on macOS / Linux. For an existing installation, read [migration and rollback](docs/migration-v4.md) first.
+
+```sh
+# Run from the project where you prepare for interviews (macOS / Linux).
+(
+  set -eu
+  if [ -e .agents/skills/interview-master ]; then
+    echo 'interview-master already exists; follow the migration guide before updating.'
+    exit 1
+  fi
+  skill_download=$(mktemp -d)
+  curl -fL 'https://github.com/chen3tu/interview-master-skill/releases/download/v4.0.0-rc.2/interview-master-v4.0.0-rc.2.zip' \
+    -o "$skill_download/interview-master.zip"
+  mkdir -p .agents/skills
+  unzip -q "$skill_download/interview-master.zip" -d .agents/skills
+)
+```
+
+**WorkBuddy / Claude**: import the same [ZIP](https://github.com/chen3tu/interview-master-skill/releases/download/v4.0.0-rc.2/interview-master-v4.0.0-rc.2.zip) through the host's skills interface and enable it. See [host-specific instructions](docs/compatibility.md).
+
+Send the request above with your target JD and real experience. Verify the loaded entry is `.agents/skills/interview-master/SKILL.md` and the adjacent `references/` files are readable.
+
+<details>
+<summary>Preview actual deliverables</summary>
+
+These examples were generated from synthetic inputs in the real Codex CLI:
+
+- [Product-role preparation](evals/codex-host/outputs/preparation.md): role mapping, English introduction, three full answers and follow-ups, a 40-minute plan, and consolidated fact checks.
+- [English data practice packet](evals/codex-host/outputs/interview_practice.md): decomposition, decision memo, alternative explanations, and [runnable SQL](evals/codex-host/outputs/work_sample.sql).
+- [Pressure interview](evals/codex-host/outputs/mock-start.md) → [pause and English demonstration](evals/codex-host/outputs/mock-pause.md) → [resume the question in Spanish](evals/codex-host/outputs/mock-resume.md).
+
+</details>
 
 ## Choose your preparation pace
 
@@ -43,7 +80,7 @@ Ask directly for an introduction, résumé edit, questions for the interviewer, 
 
 Install the entire `interview-master/` folder, including `SKILL.md` and `references/`. No host-specific API, MCP server or runtime script is required. See [host-specific instructions](docs/compatibility.md), including official sources and update guidance.
 
-For Codex, start in the project and ask it to use the project-local interview-master and identify the loaded entrypoint. If a global older version shares the name, select the intended project path. The remote published version is not yet this local candidate.
+For Codex, start in the project and ask it to use the project-local interview-master and identify the loaded entrypoint. If a global older version shares the name, select the intended project path. Use the fixed v4 download link above: the generic latest-release link may still point to the v3 stable release while v4 remains a prerelease.
 
 ## Languages without changing the facts
 
