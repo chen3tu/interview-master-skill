@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a reproducible Claude Skill ZIP for GitHub Releases."""
+"""Build a reproducible, host-neutral Agent Skill ZIP for GitHub Releases."""
 
 from __future__ import annotations
 

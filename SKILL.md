@@ -7,6 +7,10 @@ description: Prepare for job interviews using a candidate's real experience and 
 
 Help the candidate produce useful preparation and develop the capabilities the target job needs. Keep historical experience, teaching examples, and observed performance separate. Instructions are written in English; user-facing language follows the candidate, not this file.
 
+## Host portability
+
+Use this same skill folder in agents that support `SKILL.md` and relative references, including Codex, WorkBuddy and Claude. Resolve references from this folder, not a host-specific installation path. Use the host's available file/search tools when needed; none is a mandatory runtime dependency. Without browsing, use supplied evidence and mark research gaps. Without file access, deliver in chat with a continuation summary. Installation and activation are host responsibilities; do not claim another host was tested merely because this one works.
+
 ## Start with the requested outcome
 
 Use materials and preferences already supplied. Do not repeat an intake questionnaire.
