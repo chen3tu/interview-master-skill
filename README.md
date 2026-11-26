@@ -2,6 +2,8 @@
 
 [![Validate](https://github.com/chen3tu/interview-master-skill/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/chen3tu/interview-master-skill/actions/workflows/validate.yml) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
+[![Deploy on MindPal](https://mindpal.space/badges/deploy-on-mindpal.svg)](https://mindpal.space/skills/interview-master?utm_source=github&utm_medium=readme_button)
+
 **把真实经历变成能讲清、能追问、能练习的面试准备。**
 
 面向 **Codex、WorkBuddy、Claude 及支持 Agent Skills 的 Agent** 的通用面试 Skill。同一份技能包，按目标岗位生成完整答案和工作样本，也能作为教练开展多语言、可调强度的模拟面试。
